@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group 'com.mygroup'
+
+configurations {
+    externalSources
+} 
+dependencies {
+    externalSources "com.mygroup:proj1:1.2.3:sources"
+}
+tasks.register('gwtCompile', Copy) {
+    from configurations.externalSources.collect { zipTree(it) } 
+} 

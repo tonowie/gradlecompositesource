@@ -1,0 +1,4 @@
+rootProject.name = 'composite'
+
+includeBuild 'proj1'
+includeBuild 'proj2'
